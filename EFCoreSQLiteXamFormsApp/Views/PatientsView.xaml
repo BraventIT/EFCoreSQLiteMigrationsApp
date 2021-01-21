@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EFCoreSQLiteXamFormsApp.Views.PatientsView"
+             xmlns:local="clr-namespace:EFCoreSQLiteXamFormsApp.Views"
+             Title="Pacientes">
+    <local:BaseView.ContentChild>
+        <Grid>
+            <CollectionView
+                x:Name="collectionView"
+                ItemsSource="{Binding Patients, Mode=OneWay}"
+                SelectedItem="{Binding PatientSelected, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding PatientSelectedCommand}"
+                SelectionMode="Single"
+                BackgroundColor="Transparent">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,5" BackgroundColor="White" >
+                                <Frame Grid.Row="0"
+                                   BackgroundColor="#CED345"
+                                   CornerRadius="4"
+                                   HasShadow="false"
+                                   Padding="1">
+                                    <Frame Margin="1"
+                                           BackgroundColor="White"
+                                           CornerRadius="4"
+                                           HasShadow="false"
+                                           Padding="1">
+                            
+                                        <Grid Padding="10" ColumnSpacing="15" RowSpacing="15">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Aspect="AspectFit"
+                                                   VerticalOptions="Center"
+                                                   Grid.Row="0"
+                                                   Grid.RowSpan="2"
+                                                   Grid.Column="0"
+                                                   Source="face.png"/>
+                                            <Label Grid.Row="0"
+                                                   Grid.Column="1"
+                                                   TextColor="Black"
+                                                   Text="{Binding PatientId}"/>
+                                            <Label Grid.Row="1"
+                                                   Grid.Column="1"
+                                                   TextColor="Black"
+                                                   Text="{Binding Name}"/>
+                                        </Grid>
+                                    </Frame>
+                                </Frame>
+                             </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+             <Button ImageSource="add.png"
+                     HeightRequest="60"
+                     WidthRequest="60"
+                     CornerRadius="30"
+                     HorizontalOptions="End"
+                     VerticalOptions="End"
+                     BackgroundColor="#CED345"
+                     Command="{Binding AddNewPatientCommand}"/>
+        </Grid>
+    </local:BaseView.ContentChild>
+</local:BaseView>

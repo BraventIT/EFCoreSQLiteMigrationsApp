@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="EFCoreSQLiteXamFormsApp.Views.AddPatientView"
+    xmlns:local="clr-namespace:EFCoreSQLiteXamFormsApp.Views"
+    Title="Nuevo paciente">
+    <local:BaseView.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="save.png"
+            Command="{Binding AddNewPatientCommand}"/>
+    </local:BaseView.ToolbarItems>
+    <local:BaseView.ContentChild>
+        <local:PatientEditModeContentView/>
+    </local:BaseView.ContentChild>
+</local:BaseView>

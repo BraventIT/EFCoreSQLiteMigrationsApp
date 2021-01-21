@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="EFCoreSQLiteXamFormsApp.Views.PatientReadModeContentView"
+      RowSpacing="20">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Identificador de paciente: "/>
+                <Span Text="{Binding Patient.PatientId}"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+    <Label Grid.Row="1">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Nombre: "/>
+                <Span Text="{Binding Patient.Name}"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+    <Label Grid.Row="2">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Apellidos: "/>
+                <Span Text="{Binding Patient.Surname}"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+    <Label Grid.Row="3">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Edad: "/>
+                <Span Text="{Binding Patient.Age}"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+    <Label Grid.Row="4">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Médico asignado: "/>
+                <Span Text="{Binding DoctorSelected.CompleteName}"/>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+</Grid>

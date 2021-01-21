@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="EFCoreSQLiteXamFormsApp.Views.PatientEditModeContentView"
+      RowSpacing="20">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Entry Grid.Row="1"
+           Text="{Binding Patient.Name}"
+           Placeholder="Nombre"/>
+    <Entry Grid.Row="2"
+           Text="{Binding Patient.Surname}"
+           Placeholder="Apellidos"/>
+    <Entry  Grid.Row="3"
+            Text="{Binding Patient.Age}"
+            Placeholder="Edad"
+            Keyboard="Numeric"/>
+    <Picker Grid.Row="4"
+            ItemsSource="{Binding Doctors}"
+            SelectedItem="{Binding DoctorSelected}"
+            ItemDisplayBinding="{Binding CompleteName}"
+            Title="Selecciona un médico"/>
+</Grid>

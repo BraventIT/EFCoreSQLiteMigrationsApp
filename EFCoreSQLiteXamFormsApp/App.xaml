@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EFCoreSQLiteXamFormsApp.App"
+             xmlns:cv="clr-namespace:EFCoreSQLiteXamFormsApp.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <cv:InverseBoolConverter x:Key="InverseBoolConverter"/>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="{x:OnPlatform Android=White, iOS=LightGray}"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="{x:OnPlatform Android=White, iOS=LightGray}"/>
+                <Setter Property="TitleColor" Value="DarkGray"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

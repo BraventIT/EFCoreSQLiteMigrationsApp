@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EFCoreSQLiteXamFormsApp.Views.PatientDetailView"
+             xmlns:local="clr-namespace:EFCoreSQLiteXamFormsApp.Views"
+             Title="Detalle">
+    <local:BaseView.ToolbarItems>
+        <ToolbarItem IconImageSource="delete.png"
+                     Command="{Binding DeletePatientCommand}"/>
+        <ToolbarItem IconImageSource="edit.png"
+                     Clicked="ToolbarItem_Clicked" />
+    </local:BaseView.ToolbarItems>
+    <local:BaseView.ContentChild>
+        <Grid>
+            <local:PatientEditModeContentView
+                IsVisible="{Binding IsEditable}"/>
+
+            <local:PatientReadModeContentView
+                IsVisible="{Binding IsEditable, Converter={StaticResource InverseBoolConverter}}"/>
+        </Grid>
+    </local:BaseView.ContentChild>
+</local:BaseView>
